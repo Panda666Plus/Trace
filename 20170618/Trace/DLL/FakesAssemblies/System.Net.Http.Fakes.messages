@@ -1,0 +1,72 @@
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.SR 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.DelegatingStream 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.HttpRuleParser 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.HttpParseResult 生成存根: 类型是一个值类型。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.HttpCompletionOption 生成存根: 类型是一个值类型。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.HttpUtilities 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.StreamToStreamCopy 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.ClientCertificateOption 生成存根: 类型是一个值类型。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.INetworkTransportSettings 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.INotificationTransportSync 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.RtcRequestMessage 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.RtcRequestMessageExtensions 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.TRANSPORT_SETTING_ID 生成存根: 类型是一个值类型。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.HttpHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.BaseHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.ByteArrayHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.CacheControlHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.DateHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.GenericHeaderParser 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.HeaderUtilities 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.HttpContentHeaders 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.HttpGeneralHeaders 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.HttpHeaderValueCollection`1 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.HttpRequestHeaders 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.HttpResponseHeaders 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.Int32NumberHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.Int64NumberHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.MediaTypeHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.MediaTypeWithQualityHeaderValue 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.ObjectCollection`1 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.ProductInfoHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.TimeSpanHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.TransferCodingHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.TransferCodingWithQualityHeaderValue 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.UriHeaderParser 生成存根: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 FXAssembly 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 ThisAssembly 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 AssemblyRef 生成存根: 类型已密封。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 <PrivateImplementationDetails>{B9BA9961-E529-44EA-97B4-A78808D2778A} 生成存根: 类型不受支持，因为存在内部限制。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.SR 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.DelegatingStream 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.HttpRuleParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.HttpParseResult 生成填充码: 类型是一个枚举。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.HttpCompletionOption 生成填充码: 类型是一个枚举。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.HttpUtilities 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.StreamToStreamCopy 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.ClientCertificateOption 生成填充码: 类型是一个枚举。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.INetworkTransportSettings 生成填充码: 类型是一个接口。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.INotificationTransportSync 生成填充码: 类型是一个接口。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.RtcRequestMessage 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.RtcRequestMessageExtensions 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.TRANSPORT_SETTING_ID 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.HttpHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.BaseHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.ByteArrayHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.CacheControlHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.DateHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.GenericHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.HeaderUtilities 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.HttpGeneralHeaders 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.Int32NumberHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.Int64NumberHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.MediaTypeHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.ObjectCollection`1 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.ProductInfoHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.TimeSpanHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.TransferCodingHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 System.Net.Http.Headers.UriHeaderParser 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 FXAssembly 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 ThisAssembly 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 AssemblyRef 生成填充码: 类型对 exported or assembly(System.Net.Http.Fakes) 不可见。
+E:\E\Trace_version 2.0.0\Trace_version 2.0.0\Trace\MyContrlClass\fakes\System.Net.Http.fakes : warning : 无法为 <PrivateImplementationDetails>{B9BA9961-E529-44EA-97B4-A78808D2778A} 生成填充码: 类型不受支持，因为存在内部限制。

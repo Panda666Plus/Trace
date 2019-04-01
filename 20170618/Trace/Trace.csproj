@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{491DE1BB-838B-4BB5-9C07-961E17794E90}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trace</RootNamespace>
+    <AssemblyName>Trace</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Res_\Images\favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>0</WarningLevel>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Dapper\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.0.2.32240, Culture=neutral, PublicKeyToken=0e453835af4ee6ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>MVVMLightDlls\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.0.2.32240, Culture=neutral, PublicKeyToken=f46ff315b1088208, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>MVVMLightDlls\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="Lierda.WPFHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cbb49eab16984ff2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lierda.WPFHelper.1.0.2\lib\net45\Lierda.WPFHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Loya.Dameer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Loya.Dameer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Microsoft Visual Studio 14.0\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.81.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\SQLite\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http">
+      <HintPath>bin\Debug\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <HintPath>bin\Debug\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>MVVMLightDlls\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\packages\ThoughtWorks.QRCode.1.1.0\lib\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="Util.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Util.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="zxing, Version=0.12.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\zxing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\AESCrypt.cs" />
+    <Compile Include="Common\DbHelper.cs" />
+    <Compile Include="Common\HttpUtils.cs" />
+    <Compile Include="Common\HttpWebResponseUtility.cs" />
+    <Compile Include="Common\Http\HttpHelper.cs" />
+    <Compile Include="Common\ImageHelper.cs" />
+    <Compile Include="Common\Interface.cs" />
+    <Compile Include="Common\PubData.cs" />
+    <Compile Include="Common\Root.cs" />
+    <Compile Include="Common\thread\DataHandler.cs" />
+    <Compile Include="Common\thread\DataItem.cs" />
+    <Compile Include="Common\Tools.cs" />
+    <Compile Include="Common\Urls.cs" />
+    <Compile Include="Common\valid\NumberValidationRule.cs" />
+    <Compile Include="com\doone\trace\dao\ArchivesDao.cs" />
+    <Compile Include="com\doone\trace\dao\BatchDao.cs" />
+    <Compile Include="com\doone\trace\dao\DataHandlerDao.cs" />
+    <Compile Include="com\doone\trace\dao\DictDao.cs" />
+    <Compile Include="com\doone\trace\dao\FertilizeDao.cs" />
+    <Compile Include="com\doone\trace\dao\HarmlesDao.cs" />
+    <Compile Include="com\doone\trace\dao\HarvestDao.cs" />
+    <Compile Include="com\doone\trace\dao\InputDao.cs" />
+    <Compile Include="com\doone\trace\dao\MaintenanceDao.cs" />
+    <Compile Include="com\doone\trace\dao\ProductDao.cs" />
+    <Compile Include="com\doone\trace\dao\QualityDao.cs" />
+    <Compile Include="com\doone\trace\dao\RecordsDao.cs" />
+    <Compile Include="com\doone\trace\dao\ShipmentDao.cs" />
+    <Compile Include="com\doone\trace\device\pesticide\FarmersDetector.cs" />
+    <Compile Include="com\doone\trace\model\Product.cs" />
+    <Compile Include="com\doone\trace\service\ArchivesService.cs" />
+    <Compile Include="com\doone\trace\service\BatchService.cs" />
+    <Compile Include="com\doone\trace\service\DataHandlerService.cs" />
+    <Compile Include="com\doone\trace\service\DictService.cs" />
+    <Compile Include="com\doone\trace\service\FertilizeService.cs" />
+    <Compile Include="com\doone\trace\service\HarmlesService.cs" />
+    <Compile Include="com\doone\trace\service\HarvestService.cs" />
+    <Compile Include="com\doone\trace\service\InputService.cs" />
+    <Compile Include="com\doone\trace\service\LoginService.cs" />
+    <Compile Include="com\doone\trace\service\MaintenanceService.cs" />
+    <Compile Include="com\doone\trace\service\ProductService.cs" />
+    <Compile Include="com\doone\trace\service\QualityService.cs" />
+    <Compile Include="com\doone\trace\service\RecordsService.cs" />
+    <Compile Include="com\doone\trace\service\ShipmentService.cs" />
+    <Compile Include="Converter\String2ListConverter.cs" />
+    <Compile Include="MyContrlClass\Pager.xaml.cs">
+      <DependentUpon>Pager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Res_\dSqlite\dSqlite.cs">
+      <DependentUpon>dSqlite.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Res_\dSqlite\dSqlite.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dSqlite.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Themes\ImageButton1.cs" />
+    <Compile Include="ViewsModel\DateConverter.cs" />
+    <Compile Include="ViewsModel\ItemModel.cs" />
+    <Compile Include="ViewsModel\Myobjcts.cs" />
+    <Compile Include="ViewsModel\NotifyProperty.cs" />
+    <Compile Include="Common\HttpHelperLogin.cs" />
+    <Compile Include="Views\batch\BatchList.xaml.cs">
+      <DependentUpon>BatchList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\batch\BatchOper.xaml.cs">
+      <DependentUpon>BatchOper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\dangan\QrcodePage.xaml.cs">
+      <DependentUpon>QrcodePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\main\CustomCircularProgressBar.xaml.cs">
+      <DependentUpon>CustomCircularProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\main\Animation.xaml.cs">
+      <DependentUpon>Animation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\main\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\main\LeftMenu.xaml.cs">
+      <DependentUpon>LeftMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\main\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\main\RightMenu.xaml.cs">
+      <DependentUpon>RightMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Program.cs" />
+    <Compile Include="Common\RequestModel.cs" />
+    <Compile Include="Common\DataContractJsonSerializer.cs" />
+    <Compile Include="Views\main\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyContrlClass\DocementBase.cs" />
+    <Compile Include="Common\RoundedCornersPolygon.cs" />
+    <Compile Include="Views\productMaintenance\AddImages.xaml.cs">
+      <DependentUpon>AddImages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\productMaintenance\ProductMaintenance.xaml.cs">
+      <DependentUpon>ProductMaintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\WebBrowserOverlayWF.cs" />
+    <Compile Include="Common\Win32.cs" />
+    <Compile Include="Views\product\Archives.xaml.cs">
+      <DependentUpon>Archives.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\product\ArchivesOper.xaml.cs">
+      <DependentUpon>ArchivesOper.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MyContrlClass\Pager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\batch\BatchList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\batch\BatchOper.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\dangan\QrcodePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\main\CustomCircularProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\main\Animation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\main\Home.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\main\LeftMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\main\Main.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\main\RightMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\main\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\productMaintenance\AddImages.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\productMaintenance\ProductMaintenance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\product\Archives.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\product\ArchivesOper.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="bin\Debug\Trace.exe.config" />
+    <None Include="bin\Debug\Trace.vshost.exe.config" />
+    <None Include="Common\DataSources\Trace.Entities.Inputs.datasource" />
+    <None Include="DLL\FakesAssemblies\System.Net.Http.Fakes.fakesconfig" />
+    <None Include="DLL\FakesAssemblies\System.Net.Http.Fakes.messages" />
+    <None Include="DLL\SQLiteOledb\install.cmd" />
+    <None Include="DLL\SQLiteOledb\uninstall.cmd" />
+    <None Include="Res_\dSqlite\dSqlite.xsc">
+      <DependentUpon>dSqlite.xsd</DependentUpon>
+    </None>
+    <None Include="Res_\dSqlite\dSqlite.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dSqlite.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Res_\dSqlite\dSqlite.xss">
+      <DependentUpon>dSqlite.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Res_\Images\az.iss" />
+    <None Include="Res_\Styles\packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ViewsModel\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Trace.vshost.exe" />
+    <Content Include="DLL\Dapper\Dapper.dll" />
+    <Content Include="DLL\FakesAssemblies\System.Net.Http.Fakes.dll" />
+    <Resource Include="Res_\Images\qr_code.jpg" />
+    <Resource Include="Res_\Images\qr_cod21e.jpg" />
+    <Resource Include="Res_\Images\组-36.png" />
+    <Resource Include="Res_\Images\眼睛.png" />
+    <Resource Include="Res_\Images\我的档案.png" />
+    <Resource Include="Res_\Images\时间.png" />
+    <Resource Include="Res_\Images\删除.png" />
+    <Resource Include="Res_\Images\二维码 -小白菜.jpg" />
+    <Resource Include="Res_\Images\二维码 -马铃薯.jpg" />
+    <Resource Include="Res_\Images\二维码 -黄瓜.jpg" />
+    <Resource Include="Res_\Images\二维码 -番茄.jpg" />
+    <Resource Include="Res_\Images\档案接收.png" />
+    <Resource Include="Res_\Images\编辑.png" />
+    <Resource Include="Res_\Images\xiaobaocai.png" />
+    <Resource Include="Res_\Images\up03.png" />
+    <Resource Include="Res_\Images\tomato_02.jpg" />
+    <Resource Include="Res_\Images\tomato_01.jpg" />
+    <Resource Include="Res_\Images\tomato.jpg" />
+    <Resource Include="Res_\Images\t7.png" />
+    <Resource Include="Res_\Images\t6.png" />
+    <Resource Include="Res_\Images\t5.png" />
+    <Resource Include="Res_\Images\t2.png" />
+    <Resource Include="Res_\Images\t1.png" />
+    <Resource Include="Res_\Images\potato_03.png" />
+    <Resource Include="Res_\Images\potato_02.jpg" />
+    <Resource Include="Res_\Images\potato_01.jpeg" />
+    <Resource Include="Res_\Images\potato.jpg" />
+    <Resource Include="Res_\Images\photo-on.png" />
+    <Resource Include="Res_\Images\photo-off.png" />
+    <Resource Include="Res_\Images\pakchoi_02.jpg" />
+    <Resource Include="Res_\Images\pakchoi_01.jpg" />
+    <Resource Include="Res_\Images\pakchoi.jpeg" />
+    <Resource Include="Res_\Images\malingshu.png" />
+    <Resource Include="Res_\Images\lg03.png" />
+    <Resource Include="Res_\Images\lg02_2.png" />
+    <Resource Include="Res_\Images\lg02_1.png" />
+    <Resource Include="Res_\Images\lg02.png" />
+    <Resource Include="Res_\Images\icon-jiaoyifabu2.png" />
+    <Resource Include="Res_\Images\icon-jiaoyifabu.png" />
+    <Resource Include="Res_\Images\huanggua.png" />
+    <Resource Include="Res_\Images\icon-guzhang2.png" />
+    <Resource Include="Res_\Images\icon-guzhang.png" />
+    <Resource Include="Res_\Images\favicon.ico" />
+    <Resource Include="Res_\Images\fanqie.png" />
+    <Resource Include="Res_\Images\cucumber_02.png" />
+    <Resource Include="Res_\Images\cucumber_01.jpg" />
+    <Resource Include="Res_\Images\cucumber.jpg" />
+    <Resource Include="Res_\Images\circle_green.jpg" />
+    <Resource Include="Res_\Images\circle_gray2.jpg" />
+    <Resource Include="Res_\Images\Big.jpg" />
+    <Resource Include="Res_\Images\arrow.png" />
+    <Resource Include="Res_\Images\tomato\tomato.jpg" />
+    <Resource Include="Res_\Images\tomato\tomato_01.jpg" />
+    <Resource Include="Res_\Images\tomato\tomato_02.jpg" />
+    <Resource Include="Res_\Images\potato\Big.jpg" />
+    <Resource Include="Res_\Images\potato\potato.jpg" />
+    <Resource Include="Res_\Images\potato\potato_01.jpeg" />
+    <Resource Include="Res_\Images\potato\potato_02.jpg" />
+    <Resource Include="Res_\Images\potato\potato_03.png" />
+    <Resource Include="Res_\Images\pakchoi\pakchoi.jpeg" />
+    <Resource Include="Res_\Images\pakchoi\pakchoi_01.jpg" />
+    <Resource Include="Res_\Images\pakchoi\pakchoi_02.jpg" />
+    <Resource Include="Res_\Images\cucumber\cucumber.jpg" />
+    <Resource Include="Res_\Images\cucumber\cucumber_02.png" />
+    <Resource Include="Res_\Images\yij.png" />
+    <Resource Include="Res_\Images\xz01.png" />
+    <Resource Include="Res_\Images\up02.png" />
+    <Resource Include="Res_\Images\time.png" />
+    <Resource Include="Res_\Images\tais.png" />
+    <Resource Include="Res_\Images\rmv02.png" />
+    <Resource Include="Res_\Images\rmv.png" />
+    <Resource Include="Res_\Images\pc02.png" />
+    <Resource Include="Res_\Images\pc.png" />
+    <Resource Include="Res_\Images\jid.png" />
+    <Resource Include="Res_\Images\edit.png" />
+    <Resource Include="Res_\Images\hany.png" />
+    <Resource Include="Res_\Images\detail.png" />
+    <Resource Include="Res_\Images\bj01.png" />
+    <Resource Include="Res_\Images\组-15-拷贝-4.png" />
+    <Resource Include="Res_\Images\账户.png" />
+    <Resource Include="Res_\Images\圆.png" />
+    <Resource Include="Res_\Images\形状-2.png" />
+    <Resource Include="Res_\Images\形状-2-拷贝-4.png" />
+    <Resource Include="Res_\Images\形状-2-拷贝-3.png" />
+    <Resource Include="Res_\Images\形状-2-拷贝-2.png" />
+    <Resource Include="Res_\Images\日期.png" />
+    <Resource Include="Res_\Images\便捷入口.png" />
+    <Resource Include="Res_\Images\公告.png" />
+    <Resource Include="Res_\Images\菜单.png" />
+    <Resource Include="Res_\Images\icon-溯源档案2.png" />
+    <Resource Include="Res_\Images\icon-溯源档案.png" />
+    <Resource Include="Res_\Images\icon-施药记录2.png" />
+    <Resource Include="Res_\Images\icon-施药记录.png" />
+    <Resource Include="Res_\Images\icon-施肥记录2.png" />
+    <Resource Include="Res_\Images\icon-施肥记录.png" />
+    <Resource Include="Res_\Images\icon-农残检测2.png" />
+    <Resource Include="Res_\Images\icon-农残检测.png" />
+    <Resource Include="Res_\Images\icon-环境数据.png" />
+    <Resource Include="Res_\Images\icon-公告信息2.png" />
+    <Resource Include="Res_\Images\icon-公告信息.png" />
+    <Resource Include="Res_\Images\icon-产品信息2.png" />
+    <Resource Include="Res_\Images\icon-产品信息.png" />
+    <Resource Include="Res_\Images\icon-产品认证2.png" />
+    <Resource Include="Res_\Images\icon-产品认证.png" />
+    <Resource Include="Res_\Images\icon-采收2.png" />
+    <Resource Include="Res_\Images\icon-采收.png" />
+    <Resource Include="Res_\Images\icon-病虫害信息2.png" />
+    <Resource Include="Res_\Images\icon-病虫害信息.png" />
+    <Resource Include="Res_\Images\icon-报表中心2.png" />
+    <Resource Include="Res_\Images\icon-报表中心.png" />
+    <Resource Include="Res_\Images\icon-添加.png" />
+    <Resource Include="Res_\Images\icon-田块信息.png" />
+    <Resource Include="Res_\Images\icon-田块信息2.png" />
+    <Resource Include="Res_\Images\icon-图片.jpg" />
+    <Resource Include="Res_\Images\icon-图片选中.png" />
+    <Resource Include="Res_\Images\icon-销售去向.png" />
+    <Resource Include="Res_\Images\icon-销售去向2.png" />
+    <Resource Include="Res_\Images\selectedProduction.png" />
+    <Resource Include="Res_\Images\production.jpg" />
+    <Resource Include="Res_\Images\hook.png" />
+    <Resource Include="Res_\Images\pesticide.png" />
+    <Resource Include="Res_\Images\fertilization.png" />
+    <Resource Include="Res_\Images\environmentalData.png" />
+    <Resource Include="Res_\Images\+.png" />
+    <Resource Include="Res_\Images\account.png" />
+    <Resource Include="Res_\Images\add.png" />
+    <Resource Include="Res_\Images\announcement.png" />
+    <Resource Include="Res_\Images\attach.png" />
+    <Resource Include="Res_\Images\ba.png" />
+    <Resource Include="Res_\Images\bell.png" />
+    <Resource Include="Res_\Images\bg_quick_menu.png" />
+    <Resource Include="Res_\Images\big.png" />
+    <Resource Include="Res_\Images\btn-back-1.png" />
+    <Resource Include="Res_\Images\btn-back-2.png" />
+    <Resource Include="Res_\Images\btn-back-3.png" />
+    <Resource Include="Res_\Images\btn-back-4.png" />
+    <Resource Include="Res_\Images\btn-forward-1.png" />
+    <Resource Include="Res_\Images\btn-forward-2.png" />
+    <Resource Include="Res_\Images\btn-forward-3.png" />
+    <Resource Include="Res_\Images\btn-forward-4.png" />
+    <Resource Include="Res_\Images\btn-refresh-1.png" />
+    <Resource Include="Res_\Images\btn-refresh-2.png" />
+    <Resource Include="Res_\Images\btn-refresh-3.png" />
+    <Resource Include="Res_\Images\btn-refresh-4.png" />
+    <Resource Include="Res_\Images\btn_close-1.png" />
+    <Resource Include="Res_\Images\btn_close-2.png" />
+    <Resource Include="Res_\Images\btn_close-3.png" />
+    <Resource Include="Res_\Images\checked.png" />
+    <Resource Include="Res_\Images\circle_gray.png" />
+    <Resource Include="Res_\Images\circle_orange.png" />
+    <Resource Include="Res_\Images\close.png" />
+    <Resource Include="Res_\Images\closehover.png" />
+    <Resource Include="Res_\Images\closenormal.png" />
+    <Resource Include="Res_\Images\closepress.png" />
+    <Resource Include="Res_\Images\close_hover.png" />
+    <Resource Include="Res_\Images\close_hover5.png" />
+    <Resource Include="Res_\Images\close_hover_4.png" />
+    <Resource Include="Res_\Images\down.png" />
+    <Resource Include="Res_\Images\entrance.png" />
+    <Resource Include="Res_\Images\loginLabel.png" />
+    <Resource Include="Res_\Images\maxhover.png" />
+    <Resource Include="Res_\Images\maxnormal.png" />
+    <Resource Include="Res_\Images\maxpress.png" />
+    <Resource Include="Res_\Images\menu.png" />
+    <Resource Include="Res_\Images\minhover.png" />
+    <Resource Include="Res_\Images\minnormal.png" />
+    <Resource Include="Res_\Images\minpress.png" />
+    <Resource Include="Res_\Images\narrow.png" />
+    <Resource Include="Res_\Images\narrow_1.png" />
+    <Resource Include="Res_\Images\narrow_hover.png" />
+    <Resource Include="Res_\Images\narrow_hover3.png" />
+    <Resource Include="Res_\Images\pagination_first.gif" />
+    <Resource Include="Res_\Images\pagination_first_gray.gif" />
+    <Resource Include="Res_\Images\pagination_last.gif" />
+    <Resource Include="Res_\Images\pagination_last_gray.gif" />
+    <Resource Include="Res_\Images\pagination_load.png" />
+    <Resource Include="Res_\Images\pagination_loading.gif" />
+    <Resource Include="Res_\Images\pagination_next.gif" />
+    <Resource Include="Res_\Images\pagination_next_gray.gif" />
+    <Resource Include="Res_\Images\pagination_prev.gif" />
+    <Resource Include="Res_\Images\pagination_prev_gray.gif" />
+    <Resource Include="Res_\Images\restorehover.png" />
+    <Resource Include="Res_\Images\restorenormal.png" />
+    <Resource Include="Res_\Images\restorepress.png" />
+    <Resource Include="Res_\Images\sz.png" />
+    <Resource Include="Res_\Images\Trace.ico" />
+    <Resource Include="Res_\Images\up.png" />
+    <Resource Include="Res_\Images\user.png" />
+    <Resource Include="Res_\Images\user_big.png" />
+    <Resource Include="Res_\Images\user_small.png" />
+    <Resource Include="Res_\Images\大文字.png" />
+    <Resource Include="Res_\Images\密码-%281%29.png" />
+    <Resource Include="Res_\Images\放大.png" />
+    <Resource Include="Res_\Images\矩形-2.png" />
+    <Resource Include="Res_\Images\账号.png" />
+    <Resource Include="DLL\FakesAssemblies\System.Net.Http.Fakes.xml" />
+    <Content Include="DLL\Http\System.Net.Http.dll" />
+    <Content Include="DLL\Http\System.Net.Http.WebRequest.dll" />
+    <Content Include="DLL\Json\Newtonsoft.Json.dll" />
+    <Content Include="DLL\Json\System.Net.Json.dll" />
+    <Content Include="DLL\MVVMLightDlls\GalaSoft.MvvmLight.dll" />
+    <Content Include="DLL\MVVMLightDlls\GalaSoft.MvvmLight.Extras.dll" />
+    <Content Include="DLL\MVVMLightDlls\System.Windows.Interactivity.dll" />
+    <Content Include="DLL\SQLiteOledb\Win32\sqlite-oledb.dll" />
+    <Content Include="DLL\SQLiteOledb\x64\sqlite-oledb.dll" />
+    <Content Include="DLL\SQLite\32\SQLite.Interop.dll" />
+    <Content Include="DLL\SQLite\32\System.Data.SQLite.dll" />
+    <Content Include="DLL\SQLite\64\SQLite.Interop.dll" />
+    <Content Include="DLL\SQLite\64\System.Data.SQLite.dll" />
+    <Content Include="DLL\zxing\Loya.Dameer.dll" />
+    <Content Include="DLL\zxing\ThoughtWorks.QRCode.dll" />
+    <Content Include="DLL\zxing\Util.Controls.dll" />
+    <Content Include="DLL\zxing\zxing.dll" />
+    <Resource Include="bin\Debug\account.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\zh-Hans\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="com\doone\trace\device\printer\" />
+    <Folder Include="com\doone\trace\web\" />
+    <Folder Include="Views\Inputs\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

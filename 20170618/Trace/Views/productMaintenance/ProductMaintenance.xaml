@@ -1,0 +1,1060 @@
+﻿<Window
+    x:Class="Trace.Views.productMaintenance.ProductMaintenance"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:my="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+    xmlns:ctl="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    WindowStartupLocation="CenterScreen" 
+    AllowsTransparency="True" 
+    WindowStyle="None" 
+    Title="产品档案维护" 
+    Height="614" 
+    Width="1030" 
+    BorderThickness="8" 
+    Loaded="Window_Loaded"
+    Icon="/Trace;component/Res_/images/favicon.ico">
+
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="13" Color="#FF7F9DB9" ShadowDepth="0"/>
+    </Window.Effect>
+    <Window.Resources>
+
+        <SolidColorBrush x:Key="TabControlNormalBorderBrush" Color="#8C8E94"/>
+
+
+        <!--default_button_style-->
+        <!--<Style TargetType="{x:Type Button}" x:Key="default_button_style">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Foreground" Value="#000" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Background" Value="#f4f4f4"/>
+            <Setter Property="BorderBrush" Value="#999"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Width" Value="60" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Chrome" BorderThickness="0" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"  SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+                                RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#F5F5F5"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True"  >
+                                <Setter Property="Opacity"  Value="0.8"/>
+
+                                -->
+        <!--<Setter TargetName="Chrome" Property="Background" Value="#E6E6FA"/>-->
+        <!--<Setter  TargetName="Chrome" Property="Background" Value="#E6E6FA"/>-->
+        <!--
+                                <Setter Property="Foreground" Value="#fff"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#00FFFFFF"/>
+                    <Setter Property="Foreground" Value="#fff"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>-->
+
+        <!--TextBox-->
+        <!--<Style TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="Bd" SnapsToDevicePixels="False"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"></ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderBrush" Value="LightGray"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="styleSubmit">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Foreground" Value="#000" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Background" Value="#f4f4f4"/>
+            <Setter Property="BorderBrush" Value="#999"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Width" Value="60" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Chrome" BorderThickness="0" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"  SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+                                RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Chrome" Property="Background" Value="#00FF00"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF23AA36"/>
+                    <Setter Property="Foreground" Value="#fff"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="style3">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Foreground" Value="#000" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Background" Value="#FF5AD36B"/>
+            <Setter Property="BorderBrush" Value="#999"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Width" Value="60" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Chrome" BorderThickness="0" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"  SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+                                RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Chrome" Property="Background" Value="#FF0000"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#999"/>
+                    <Setter Property="Foreground" Value="#fff"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>-->
+
+        <!--ComboBoxTextBox-->
+        <!--
+        <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
+            <Border x:Name="PART_ContentHost" Focusable="False" Background="{TemplateBinding Background}" />
+        </ControlTemplate>
+        <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" BorderThickness="2,2,0,2" BorderBrush="#e8e8e8" />
+
+                <Border Grid.Column="1" Background="WhiteSmoke" Cursor="Hand"/>
+                <Path x:Name="Arrow" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z" Margin="16,16,10,10" Stretch="Fill" Fill="White" />
+            </Grid>
+        </ControlTemplate>-->
+
+        <!--<Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid>
+                            -->
+        <!-- ToggleButton 已数据绑定到 ComboBox 本身以切换 IsDropDownOpen -->
+        <!--
+                            <ToggleButton Grid.Column="2" Template="{DynamicResource ComboBoxToggleButton}" x:Name="ToggleButton" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press"/>
+                            <ContentPresenter HorizontalAlignment="Left" Margin="3,3,23,3" x:Name="ContentSite" VerticalAlignment="Center" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" IsHitTestVisible="False"/>
+
+                            -->
+        <!-- 必须将 TextBox 命名为 PART_EditableTextBox，否则 ComboBox 将无法识别它 -->
+        <!--
+                            <TextBox Visibility="Hidden" Template="{DynamicResource ComboBoxTextBox}" HorizontalAlignment="Left" Margin="3,3,23,3" x:Name="PART_EditableTextBox" Style="{x:Null}" VerticalAlignment="Center" Focusable="True" Background="Transparent" IsReadOnly="{TemplateBinding IsReadOnly}"/>
+
+                            -->
+        <!-- Popup 可显示 ComboBox 中的项列表。IsOpen 已数据绑定到通过 ComboBoxToggleButton 来切换的 IsDropDownOpen -->
+        <!--
+                            <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Slide">
+                                <Grid MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                                    <Border x:Name="DropDownBorder" Background="{DynamicResource WindowBackgroundBrush}" BorderBrush="{DynamicResource SolidBorderBrush}" BorderThickness="1"/>
+                                    <ScrollViewer Margin="4,6,4,6" Style="{DynamicResource SimpleScrollViewer}" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                                        -->
+        <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
+        <!--
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" Background="White"/>
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+
+        <!--<Style x:Key="ImageButton" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Button ></Button>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+        <Style x:Key="AddImageButton" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderThickness="1" BorderBrush="Green" Background="White">
+                            <Canvas>
+                                <Line X1="25" Y1="42.5" X2="60" Y2="42.5"  Stroke="Green" StrokeThickness="2"></Line>
+                                <Line X1="42.5" Y1="25" X2="42.5" Y2="60"  Stroke="Green" StrokeThickness="2"></Line>
+                            </Canvas>
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ImageButton" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+
+
+
+                            <Border x:Name="border" BorderThickness="1" Grid.Column="1" Background="{TemplateBinding Background}" Margin="0"></Border>
+                            <Canvas>
+
+                                <Ellipse Canvas.Left="75" Canvas.Top="-10" Width="20" Height="20" Fill="Green"/>
+                                <Line X1="80" X2="90" Stroke="White" StrokeThickness="1"></Line>
+                            </Canvas>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--下拉框样式-->
+        <Style x:Key="ComboBoxFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="4,4,21,4" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#F3F3F3" Offset="0"/>
+            <GradientStop Color="#EBEBEB" Offset="0.5"/>
+            <GradientStop Color="#DDDDDD" Offset="0.5"/>
+            <GradientStop Color="#CDCDCD" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+        <Geometry x:Key="DownArrowGeometry">M 0 0 L 3.5 4 L 7 0 Z</Geometry>
+        <Style x:Key="ComboBoxReadonlyToggleButton" TargetType="{x:Type ToggleButton}">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="ClickMode" Value="Press"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border BorderThickness="{TemplateBinding BorderThickness}" x:Name="Chrome"  BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"  SnapsToDevicePixels="true">
+                            <Grid HorizontalAlignment="Right" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+                                <Path x:Name="Arrow" Data="{StaticResource DownArrowGeometry}" Fill="#808080" HorizontalAlignment="Center" Margin="1,1,0,0" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Fill" TargetName="Arrow" Value="#AFAFAF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <LinearGradientBrush x:Key="TextBoxBorder" EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+            <GradientStop Color="#ABADB3" Offset="0.05"/>
+            <GradientStop Color="#E2E3EA" Offset="0.07"/>
+            <GradientStop Color="#E3E9EF" Offset="1"/>
+        </LinearGradientBrush>
+        <Style x:Key="ComboBoxEditableTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="MinWidth" Value="0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <ScrollViewer x:Name="PART_ContentHost" Background="Transparent" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ComboBoxToggleButton1" TargetType="{x:Type ToggleButton}">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="ClickMode" Value="Press"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <my:ButtonChrome x:Name="Chrome" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RoundCorners="false" SnapsToDevicePixels="true" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+                            <Path x:Name="Arrow" Data="{StaticResource DownArrowGeometry}" Fill="Black" HorizontalAlignment="Center" Margin="0,1,0,0" VerticalAlignment="Center"/>
+                        </my:ButtonChrome>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="RenderPressed" TargetName="Chrome" Value="true"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Fill" TargetName="Arrow" Value="#AFAFAF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ControlTemplate x:Key="ComboBoxEditableTemplate" TargetType="{x:Type ComboBox}">
+            <Grid x:Name="Placement" SnapsToDevicePixels="true">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom">
+                    <my:SystemDropShadowChrome x:Name="Shdw" Color="Transparent" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{Binding ActualWidth, ElementName=Placement}">
+                        <Border x:Name="DropDownBorder" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderThickness="1" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
+                            <ScrollViewer x:Name="DropDownScrollViewer">
+                                <Grid RenderOptions.ClearTypeHint="Enabled">
+                                    <Canvas HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
+                                        <Rectangle x:Name="OpaqueRect" Fill="{Binding Background, ElementName=DropDownBorder}" Height="{Binding ActualHeight, ElementName=DropDownBorder}" Width="{Binding ActualWidth, ElementName=DropDownBorder}"/>
+                                    </Canvas>
+                                    <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Grid>
+                            </ScrollViewer>
+                        </Border>
+                    </my:SystemDropShadowChrome>
+                </Popup>
+                <my:ListBoxChrome x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.ColumnSpan="2" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}"/>
+                <TextBox x:Name="PART_EditableTextBox" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}" Margin="{TemplateBinding Padding}" Style="{StaticResource ComboBoxEditableTextBox}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                <ToggleButton Grid.Column="1" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsKeyboardFocusWithin" Value="true">
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+                <Trigger Property="IsDropDownOpen" Value="true">
+                    <Setter Property="RenderFocused" TargetName="Border" Value="true"/>
+                </Trigger>
+                <Trigger Property="HasItems" Value="false">
+                    <Setter Property="Height" TargetName="DropDownBorder" Value="95"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                    <Setter Property="Background" Value="#FFF4F4F4"/>
+                </Trigger>
+                <Trigger Property="IsGrouping" Value="true">
+                    <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                </Trigger>
+                <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
+                    <Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5"/>
+                    <Setter Property="Color" TargetName="Shdw" Value="#71000000"/>
+                </Trigger>
+                <Trigger Property="ScrollViewer.CanContentScroll" SourceName="DropDownScrollViewer" Value="false">
+                    <Setter Property="Canvas.Top" TargetName="OpaqueRect" Value="{Binding VerticalOffset, ElementName=DropDownScrollViewer}"/>
+                    <Setter Property="Canvas.Left" TargetName="OpaqueRect" Value="{Binding HorizontalOffset, ElementName=DropDownScrollViewer}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style x:Key="CboCommomStyle" TargetType="{x:Type ComboBox}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ComboBoxFocusVisual}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+            <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="Padding" Value="4,3"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid x:Name="MainGrid" SnapsToDevicePixels="true" Margin="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition MinWidth="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" Width="0"/>
+                            </Grid.ColumnDefinitions>
+                            <Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom">
+                                <Border x:Name="Shdw" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{Binding ActualWidth, ElementName=MainGrid}">
+                                    <Border x:Name="DropDownBorder" BorderBrush="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" BorderThickness="1" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
+                                        <ScrollViewer x:Name="DropDownScrollViewer">
+                                            <Grid RenderOptions.ClearTypeHint="Enabled">
+                                                <Canvas HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
+                                                    <Rectangle x:Name="OpaqueRect" Fill="{Binding Background, ElementName=DropDownBorder}" Height="{Binding ActualHeight, ElementName=DropDownBorder}" Width="{Binding ActualWidth, ElementName=DropDownBorder}"/>
+                                                </Canvas>
+                                                <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                            </Grid>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Border>
+                            </Popup>
+                            <ToggleButton BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ComboBoxReadonlyToggleButton}" BorderThickness="{TemplateBinding BorderThickness}"/>
+                            <ContentPresenter ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Content="{TemplateBinding SelectionBoxItem}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="false" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
+                                <Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5"/>
+
+                            </Trigger>
+                            <Trigger Property="HasItems" Value="false">
+                                <Setter Property="Height" TargetName="DropDownBorder" Value="95"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                                <Setter Property="Background" Value="#FFF4F4F4"/>
+                            </Trigger>
+                            <Trigger Property="IsGrouping" Value="true">
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </Trigger>
+                            <Trigger Property="ScrollViewer.CanContentScroll" SourceName="DropDownScrollViewer" Value="false">
+                                <Setter Property="Canvas.Top" TargetName="OpaqueRect" Value="{Binding VerticalOffset, ElementName=DropDownScrollViewer}"/>
+                                <Setter Property="Canvas.Left" TargetName="OpaqueRect" Value="{Binding HorizontalOffset, ElementName=DropDownScrollViewer}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsEditable" Value="true">
+                    <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+                    <Setter Property="IsTabStop" Value="false"/>
+                    <Setter Property="Padding" Value="3"/>
+                    <Setter Property="Template" Value="{StaticResource ComboBoxEditableTemplate}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+    <Canvas Margin="0,0,0,34">
+        <Canvas Height="30" Width="1014" Background="#2d8931">
+            <Label x:Name="LabelTitle" Content="产品档案维护" Height="30" Padding="5" FontSize="14" Foreground="White" HorizontalAlignment="Left"/>
+            <Button x:Name="btnClose" Click="btnClose_Click" Height="12" Width="12" AllowDrop="False" Canvas.Left="992" Canvas.Top="10" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="12,0.694">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Trace;component/Res_/images/close.png" TileMode="Tile"/>
+                </Button.Background>
+            </Button>
+        </Canvas>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Center" Height="530"  VerticalAlignment="Top" Width="1014" BorderBrush="#cccccc" BorderThickness="0,1,0,0" Background="White" ScrollViewer.VerticalScrollBarVisibility="Visible" Canvas.Top="32">
+            <TabControl.Resources>
+                <Style TargetType="{x:Type TabPanel}" >
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="ProductInfo" >
+                <TabItem.Style>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TabItem}">
+                                    <StackPanel Orientation="Vertical" >
+                                        <Image x:Name="img2Off" Width="84" Height="70" Source="/Trace;component/Res_/Images/icon-产品信息.png"   Margin="0,0,0,0" />
+                                        <Label Content="产品信息" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="img2Off" Property="Source" Value="/Trace;component/Res_/Images/icon-产品信息2.png"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Style>
+                <StackPanel Orientation="Vertical" Margin="196,10,100,-2" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Label Content="产品名称：" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                        <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                        <TextBox x:Name="productName"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1,10,0,0">
+                        <Label Content="产品图片：" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                        <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                        <Button x:Name="AddImages"  Content="添加图片" Click="AddImages_Click" Width="75" Height="26" Style="{StaticResource ResourceKey=WpfButton}"/>
+                        <Label Content="请上传图片|最佳尺寸:500px*500px" Style="{StaticResource ResourceKey=WpfLable}" Foreground="#666666" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="1,10,0,0" >
+                        <Label Content="品　　种：" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                        <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                        <ComboBox x:Name="produceId" SelectedValuePath="PRODUCE_ID" DisplayMemberPath="PRODUCE_NAME" Width="260"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1,10,0,0">
+                        <Label Content="产品介绍：" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                        <Label Content="*" Visibility="Hidden" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                        <TextBox x:Name="orginDesc" AcceptsReturn="False" Height="66"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1,10,0,0">
+                        <Label Content="备　　注：" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                        <Label Content="*" Visibility="Hidden" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                        <TextBox x:Name="txtRemark" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1,10,0,0">
+                        <Label Content="产品标签：" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                        <Label Content="*" Visibility="Hidden" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                        <Border BorderBrush="#FFEAEAEA" Padding="20,0,20,0" BorderThickness="1" CornerRadius="10" Background="#FFEAEAEA" Height="29">
+                            <Label Content="稻谷" Foreground="#FF8B8989" />
+                        </Border>
+                        <Border BorderBrush="#FFEAEAEA" Margin="15,0,0,0" Padding="20,0,20,0" BorderThickness="1" CornerRadius="10" Background="#FFEAEAEA" Width="62" RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="0.846"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                            <Label Content="三号" Foreground="#FF8B8989" Margin="-8,0,-22,0" />
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1,10,0,0">
+                        <Label Content="产品指标：" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" Width="57"/>
+                        <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" Width="27"/>
+                        <TextBox x:Name="textBox_Copy5" Foreground="#FFB2B2B2" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Background="WhiteSmoke" >
+                        </TextBox>
+                        <TextBox x:Name="textBox_Copy6" HorizontalAlignment="Left"  Foreground="#FFB2B2B2" Margin="15,0,0,0" Height="28" TextWrapping="Wrap" Width="394" Background="WhiteSmoke">
+
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76,10,0,0" Width="527">
+                        <Label Width="9"/>
+                        <TextBox x:Name="textBox_Copy7" HorizontalAlignment="Left" Height="28" Foreground="#FFB2B2B2" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Background="WhiteSmoke">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                    <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="textBox_Copy8" Margin="15,0,0,0" Foreground="#FFB2B2B2" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Width="394" Background="WhiteSmoke" >
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                    <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76,10,0,0" Width="527">
+                        <Label RenderTransformOrigin="0.5,0.5" Width="9">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+                        <TextBox x:Name="textBox_Copy9" Grid.Column="1"  Foreground="#FFB2B2B2" HorizontalAlignment="Left" Height="28"  Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Background="WhiteSmoke" >
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                    <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="textBox_Copy10" Margin="15,0,0,0" Grid.Column="1"  Foreground="#FFB2B2B2" HorizontalAlignment="Left" Height="28"  Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="394" Background="WhiteSmoke" >
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                    <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76,10,0,0" Width="527">
+                        <Label RenderTransformOrigin="0.5,0.5" Width="9">
+                        </Label>
+                        <TextBox x:Name="textBox_Copy12" Grid.Column="1"  Foreground="#FFB2B2B2" HorizontalAlignment="Left" Height="28"  Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="97" Background="WhiteSmoke" >
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                    <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBox x:Name="textBox_Copy13" Margin="15,0,0,0" Grid.Column="1"  Foreground="#FFB2B2B2" HorizontalAlignment="Left" Height="28"  Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="394" Background="WhiteSmoke" >
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                    <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="GrowPeriod" Loaded="ImageTabItem_Loaded">
+                <TabItem.Style>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TabItem}">
+                                    <StackPanel Orientation="Vertical" >
+                                        <Image x:Name="img2Off" Width="84" Height="70" Source="/Trace;component/Res_/Images/icon-图片.jpg"   Margin="0,0,0,0" />
+                                        <Label Content="生长期图片" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="img2Off" Property="Source" Value="/Trace;component/Res_/Images/icon-图片选中.png"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Style>
+                <ScrollViewer Width="1010">
+                    <StackPanel Orientation="Vertical" Margin="50,0,50,0" >
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Height="200" Width="200" Margin="10" >
+                            <Button Width="200" Height="200" x:Name="BigImage">
+                                <!--<Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/tomato.jpg" />
+                                </Button.Background>-->
+
+                            </Button>
+                            <!--<Button Width="200" Height="200" x:Name="BigImage1" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/Big.jpg" />
+                                </Button.Background>
+
+                            </Button>
+                            <Button Width="200" Height="200" x:Name="BigImage2" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/pakchoi.jpeg" />
+                                </Button.Background>
+
+                            </Button>
+                            <Button Width="200" Height="200" x:Name="BigImage3" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/cucumber.jpg" />
+                                </Button.Background>
+
+                            </Button>-->
+                        </StackPanel>
+                        <WrapPanel x:Name="ProductImages">
+                            <!--<Button Height="85" Width="85" Margin="10" x:Name="btnImage1" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd">
+
+                            </Button>-->
+
+                            <!--btn_01-->
+                            <!--<Button Height="85" Width="85" Margin="10" x:Name="btn_01" Style="{StaticResource ImageButton}" Tag="0" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/potato_02.jpg" Stretch="Fill"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Height="85" Width="85" Margin="10" x:Name="btn_01_1" Style="{StaticResource ImageButton}" Tag="0" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/tomato_01.jpg" Stretch="Fill"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Height="85" Width="85" Margin="10" x:Name="btn_01_2" Style="{StaticResource ImageButton}" Tag="0" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/pakchoi_01.jpg" Stretch="Fill"/>
+                                </Button.Background>
+                            </Button>
+                            <Button Height="85" Width="85" Margin="10" x:Name="btn_01_3" Style="{StaticResource ImageButton}" Tag="0" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/cucumber_01.jpg" Stretch="Fill"/>
+                                </Button.Background>
+                            </Button>-->
+                            <!--<Button Height="85" Width="85" Margin="10" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd"/>-->
+                            <!--<Button Height="85" Width="85" Margin="10" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd"/>-->
+                            <!--btn_02-->
+                            <!--<Button Height="85" Width="85" Margin="10" x:Name="btn_02" Style="{StaticResource ImageButton}" Tag="0"  Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/tomato/tomato_02.jpg"/>
+                                </Button.Background>
+
+                            </Button>
+                            <Button Height="85" Width="85" Margin="10" x:Name="btn_02_01" Style="{StaticResource ImageButton}" Tag="0" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/potato_01.jpeg"/>
+                                </Button.Background>
+
+                            </Button>
+                            <Button Height="85" Width="85" Margin="10" x:Name="btn_02_02" Style="{StaticResource ImageButton}" Tag="0" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/pakchoi/pakchoi_02.jpg"/>
+                                </Button.Background>
+
+                            </Button>
+                            <Button Height="85" Width="85" Margin="10" x:Name="btn_02_03" Style="{StaticResource ImageButton}" Tag="0" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/cucumber_02.png"/>
+                                </Button.Background>
+
+                            </Button>-->
+
+                            <!--<Button x:Name="btn_03" Height="85" Width="85" Margin="10" Style="{StaticResource ImageButton}" Tag="0" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/potato/potato.jpg"/>
+                                </Button.Background>
+
+                            </Button>
+                            <Button x:Name="btn_03_01" Height="85" Width="85" Margin="10" Style="{StaticResource ImageButton}" Tag="0" Visibility="Collapsed">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Trace;component/Res_/Images/potato/potato_03.png"/>
+                                </Button.Background>
+                            </Button>-->
+                            <Button Height="85" Width="85" Margin="10" x:Name="ImageButton" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddone" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddtwo" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddthree" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddfour" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddfive" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddsix" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddseven" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddeight" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddnine" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddten" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddeleven" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddtwelve" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddthirteen" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddfourteen" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddfifteen" Style="{StaticResource ImageButton}" Tag="0" Background="#e0dddd" Visibility="Collapsed"/>
+                            <Button Height="85" Width="85" Margin="10" x:Name="ibtnAddsixteen" Background="White" BorderBrush="Green" BorderThickness="10" Style="{StaticResource AddImageButton}" Tag="add" Click="Button_Click"/>
+                        </WrapPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="FertRecord">
+                <TabItem.Style>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TabItem}">
+                                    <StackPanel Orientation="Vertical" >
+                                        <Image x:Name="img2Off" Width="84" Height="70" Source="/Trace;component/Res_/Images/icon-施肥记录.png"   Margin="0,0,0,0" />
+                                        <Label Content="施肥记录" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="img2Off" Property="Source" Value="/Trace;component/Res_/Images/icon-施肥记录2.png"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Style>
+                <ScrollViewer Width="1010">
+                    <StackPanel Orientation="Vertical" Margin="45,5,45,0">
+                        <DataGrid x:Name="dataGridFert" AutoGenerateColumns="False" GridLinesVisibility="None" RowHeaderWidth="0" CanUserDeleteRows="False" CanUserAddRows="False" Height="Auto">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="使用品名" Width="180" Binding="{Binding ACTION_VALUE}"/>
+                                <DataGridTextColumn Header="使用数量" Width="180" Binding="{Binding AMOUNT}"/>
+                                <DataGridTextColumn Header="使用面积(亩)" Width="180" Binding="{Binding AREA}"/>
+                                <DataGridTextColumn Header="使用日期" Width="180" Binding="{Binding ACTION_DATE}"/>
+                                <DataGridTextColumn Header="批号" Width="180"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Orientation="Horizontal" Height="25" Margin="55,10,0,0">
+                            <Border BorderBrush="#FFEAEAEA" Padding="20,0,20,0" BorderThickness="1" CornerRadius="10" Background="#FFEAEAEA">
+                                <Label Content="碳酸氢铵" Foreground="#FF8B8989" Margin="0,-2" />
+                            </Border>
+                            <Border BorderBrush="#FFEAEAEA" Padding="20,0,20,0" Margin="20,0,0,0" BorderThickness="1" CornerRadius="10" Background="#FFEAEAEA">
+                                <Label Content="复合肥" Foreground="#FF8B8989" Margin="0,-2,0,-7" />
+                            </Border>
+                            <Border BorderBrush="#FFEAEAEA" Padding="20,0,20,0" Margin="20,0,0,0" BorderThickness="1" CornerRadius="10" Background="#FFEAEAEA">
+                                <Label x:Name="lbOn" Foreground="#FF8B8989" Content="有机肥" Margin="0,-2,0,-7"/>
+                            </Border>
+                            <Label/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,5">
+                            <Label Content="使用品名及批号：" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <TextBox x:Name="actionValue"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,5,0,5">
+                            <Label Content="使用数量：　　　" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <TextBox x:Name="amount"/>
+                            <ComboBox x:Name="harvestAmountUnit" Width="95" Foreground="Gray" Margin="10,0,0,0">
+                                <ComboBoxItem x:Name="hUnitY" Tag="U03" IsSelected="True" Content="千克"/>
+                                <ComboBoxItem x:Name="hUnitZ" Tag="U04" Content="吨"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,5,0,5">
+                            <Label x:Name="label14" Content="使用面积：　　　" HorizontalAlignment="Left"  Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <TextBox x:Name="area" HorizontalAlignment="Left" TextWrapping="Wrap" >
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="4"/>
+                                        <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,5,0,5">
+                            <Label Content="使用日期：　　　" HorizontalAlignment="Left"  Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <DatePicker x:Name="actionDate" SelectedDate="{x:Static sys:DateTime.Now}" SelectedDateFormat="Long" Margin="0,5,0,5" Width="260" Padding="0,4,0,4"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,5,0,5">
+                            <Label Content="操作人：　　　　" HorizontalAlignment="Left"  Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <TextBox x:Name="actionPerson" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="720,50,0,0">
+                            <!--<Button x:Name="btnAddFertilization" Content="新 增" Style="{StaticResource ResourceKey=WpfButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnAddFertilization_Click" />-->
+
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="PestRecord">
+                <TabItem.Style>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TabItem}">
+                                    <StackPanel Orientation="Vertical" >
+                                        <Image x:Name="img2Off" Width="84" Height="70" Source="/Trace;component/Res_/Images/icon-施药记录.png"   Margin="0,0,0,0" />
+                                        <Label Content="施药记录" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="img2Off" Property="Source" Value="/Trace;component/Res_/Images/icon-施药记录2.png"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Style>
+                <ScrollViewer Width="1010">
+                    <StackPanel Orientation="Vertical" Margin="45,5,45,0" >
+                        <DataGrid x:Name="dataGridPest" AutoGenerateColumns="False" GridLinesVisibility="None" RowHeaderWidth="0" CanUserDeleteRows="False" CanUserAddRows="False" Height="Auto">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn  Header="商品登记名/审定名称" Width="135" Binding="{Binding ACTION_VALUE}"/>
+                                <DataGridTextColumn  Header="商品有效成分" Width="120" Binding="{Binding YXCF}"/>
+                                <DataGridTextColumn  Header="使用浓度" Width="100" Binding="{Binding THICKNESS}"/>
+                                <DataGridTextColumn  Header="使用数量" Width="100" Binding="{Binding AMOUNT}"/>
+                                <DataGridTextColumn  Header="使用面积(亩)" Width="100" Binding="{Binding AREA}"/>
+                                <DataGridTextColumn  Header="使用日期" Width="120" Binding="{Binding ACTION_DATE}"/>
+                                <DataGridTextColumn  Header="安全间隔期(天)" Width="100" Binding="{Binding AQJGQ}"/>
+                                <DataGridTextColumn  Header="批号" Width="120"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Orientation="Horizontal" Height="34" Margin="44,10,0,0">
+                            <Border BorderBrush="#FFEAEAEA"  BorderThickness="1" CornerRadius="10" Background="#FFEAEAEA" Margin="0,6,0,2" Width="82">
+                                <Label Content="创森" Foreground="#FF8B8989" Margin="23,-2,18,-7" Width="39" />
+                            </Border>
+                            <Border BorderBrush="#FFEAEAEA"   Padding="20,0,20,0" Margin="36,3,0,2" BorderThickness="1" CornerRadius="10" Background="#FFEAEAEA">
+                                <Label Content="毒死蜱" Foreground="#FF8B8989" Margin="0,0,0,-11" />
+                            </Border>
+                            <Border BorderBrush="#FFEAEAEA" Padding="20,0,20,0" Margin="36,3,0,2"  BorderThickness="1" CornerRadius="10" Background="#FFEAEAEA">
+                                <Label x:Name="lbOn3" Foreground="#FF8B8989" Content="禾草克"  Margin="0,-1,0,-8"/>
+                            </Border>
+                            <Label/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,20,0,5">
+                            <Label Content="商品登记名 / 审定名称：" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <TextBox x:Name="actionValue2" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap"  VerticalAlignment="Top" Width="336" Background="WhiteSmoke"  Foreground="#FFB2B2B2">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="4"/>
+                                        <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,5,0,5">
+                            <Label Content="商品有效成分：　　　　" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <Label x:Name="label29" FontSize="13"  Foreground="Gray" BorderBrush="Gray" Grid.ColumnSpan="2" Content="50%除虫菊素" HorizontalAlignment="Left" Height="31"  Grid.Row="1" VerticalAlignment="Top" Width="335" RenderTransformOrigin="0.514,-0.29"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,5,0,5">
+                            <Label Content="使用浓度：　　　　　　" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <TextBox x:Name="thinckNess" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap"  VerticalAlignment="Top" Width="197" Background="WhiteSmoke"  Foreground="#FFB2B2B2">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="4"/>
+                                        <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                            <!--<ComboBox x:Name="harvestAmountUnit3" Width="140" Foreground="Gray" Margin="10,0,0,0">
+                                    <ComboBoxItem x:Name="hUnitY3" Tag="U03" IsSelected="True"  Content="20%"/>
+                                    <ComboBoxItem x:Name="hUnitZ3" Tag="U04" Content="50%"/>
+                                </ComboBox>-->
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,5,0,5">
+                            <Label Content="使用数量：　　　　　　" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <TextBox x:Name="amount2" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap"  VerticalAlignment="Top" Width="197" Background="WhiteSmoke"  Foreground="#FFB2B2B2">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="4"/>
+                                        <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                            <ComboBox x:Name="amountUnit2" Width="142" Foreground="Gray"  Margin="10,0,0,0">
+                                <ComboBoxItem x:Name="hUnitY4" Tag="U03" IsSelected="True" Content="克/亩"/>
+                                <ComboBoxItem x:Name="hUnitZ4" Tag="U04" Content="千克/亩"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,5,0,5">
+                            <Label Content="使用面积：　　　　　　" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <TextBox x:Name="area2" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap"  VerticalAlignment="Top" Width="197" Background="WhiteSmoke"  Foreground="#FFB2B2B2">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="4"/>
+                                        <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                            <Label x:Name="label23" Content=" 亩"  HorizontalAlignment="Left" Height="29"  Grid.Row="1" VerticalAlignment="Top" Width="86" Grid.Column="1"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,5,0,5">
+                            <Label Content="使用日期：　　　　　　" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <DatePicker x:Name="actionDate2" SelectedDate="{x:Static sys:DateTime.Now}" SelectedDateFormat="Long" Margin="0,5,0,5" Width="200" Padding="0,3,0,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,5,0,5">
+                            <Label Content="安全间隔离期：　　　　" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <Label x:Name="label31" Content=" 7天"  Foreground="#FFB2B2B2" HorizontalAlignment="Left" Height="29"  Grid.Row="1" VerticalAlignment="Top" Width="197" Grid.Column="1"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,5,0,5">
+                            <Label Content="操作人：　　　　　　　" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label Content="*" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=WpfLable}" />
+                            <TextBox x:Name="actionPerson2" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap"  VerticalAlignment="Top" Width="197" Background="WhiteSmoke"  Foreground="#FFB2B2B2">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="4"/>
+                                        <Setter Property="BorderBrush" Value="#c1d0dc"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="720,-95,0,0">
+                            <!--<Button x:Name="btnAddFertilization1" Content="新 增" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" FontSize="14" Click="btnAddFertilization_Click" Height="26" Width="54" Foreground="#FFF5EFEF" FontWeight="Bold" RenderTransformOrigin="1.611,2.154">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="#FFF3F3F3" Offset="0.997"/>
+                                            <GradientStop Color="#FFEBEBEB" Offset="1"/>
+                                            <GradientStop Color="#FFDDDDDD" Offset="1"/>
+                                            <GradientStop Color="#FF35BF3B" Offset="1"/>
+                                            <GradientStop Color="#FF219126" Offset="0.952"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                </Button>-->
+
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="EnvData">
+                <TabItem.Style>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TabItem}">
+                                    <StackPanel Orientation="Vertical" >
+                                        <Image x:Name="img2Off" Width="84" Height="70" Source="/Trace;component/Res_/Images/icon-环境数据.png"   Margin="0,0,0,0" />
+                                        <Label Content="环境数据" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="img2Off" Property="Source" Value="/Trace;component/Res_/Images/icon-环境数据.png"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Style>
+            </TabItem>
+            <TabItem Header="ProductCert">
+                <TabItem.Style>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TabItem}">
+                                    <StackPanel Orientation="Vertical" >
+                                        <Image x:Name="img2Off" Width="84" Height="70" Source="/Trace;component/Res_/Images/icon-产品认证.png"   Margin="0,0,0,0" />
+                                        <Label Content="产品认证" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="img2Off" Property="Source" Value="/Trace;component/Res_/Images/icon-产品认证2.png"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Style>
+            </TabItem>
+        </TabControl>
+        <Border Height="36" Canvas.Top="562" Width="1014" HorizontalAlignment="Right" BorderBrush="#FFdddddd" BorderThickness="0,1,0,0" Background="#FFF7F7F7">
+            <Canvas Margin="790,3,0,0">
+                <Button x:Name="qualityAdd" Style="{StaticResource ResourceKey=WpfButton}" Content="提交" Width="75" Click="btnSave_Click" Canvas.Left="139" />
+            </Canvas>
+        </Border>
+        <TextBox Name="hproId" Visibility="Hidden"/>
+    </Canvas>
+
+</Window>

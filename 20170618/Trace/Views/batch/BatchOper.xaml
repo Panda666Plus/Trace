@@ -1,0 +1,226 @@
+﻿<Window x:Class="Trace.Views.batch.BatchOper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Trace.Views.batch"
+        xmlns:dc="clr-namespace:Trace.ViewsModel"
+        mc:Ignorable="d" 
+        WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" MouseDoubleClick="Window_MouseDoubleClick" MouseLeftButtonDown="MainWindow_MouseLefButtonDown" 
+        Title="新增批次" Height="614" Width="1030" BorderThickness="8" Loaded="Window_Loaded" >
+
+    <Window.Resources>
+        <dc:DateConverter x:Key="dateConverter"/>
+    </Window.Resources>
+    
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="13" Color="#FF7F9DB9" ShadowDepth="0"/>
+    </Window.Effect>
+
+    <Canvas Margin="0,0,0,36">
+        <Canvas Height="30" Width="1014" Background="#2d8931">
+            <Label x:Name="LabelTitle" Content="产品批次" Height="30" Padding="5" FontSize="14" Foreground="White" HorizontalAlignment="Left"/>
+            <Button x:Name="btnClose" Click="btnClose_Click" Height="12" Width="12" AllowDrop="False" Canvas.Left="992" Canvas.Top="10" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Trace;component/Res_/images/close.png" TileMode="Tile"/>
+                </Button.Background>
+            </Button>
+        </Canvas>
+        <TabControl Height="527" Name="tabControl1" Width="1014" Canvas.Top="35" HorizontalAlignment="Center" BorderBrush="#cccccc" BorderThickness="0,1,0,0" Background="White">
+            <TabControl.Resources>
+                <Style TargetType="{x:Type TabPanel}">
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                </Style>
+            </TabControl.Resources>
+            <!--农残检测-->
+            <TabItem Name="tabItem1" Padding="20,0,20,0">
+                <TabItem.Style>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TabItem}">
+                                    <StackPanel Orientation="Vertical" >
+                                        <Image Name="img2Off" Width="84" Height="70" Source="/Trace;component/Res_/Images/icon-农残检测.png" Margin="0,0,0,0" ></Image>
+                                        <Label Content="农残检测" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="img2Off" Property="Source" Value="/Trace;component/Res_/Images/icon-农残检测2.png"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Style>
+                <StackPanel Orientation="Vertical" Width="850" Margin="0,0,0,-2">
+                    <StackPanel Orientation="Vertical" Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <DataGrid x:Name="dataGrid" Width="850" LoadingRow="dataGrid_LoadingRow" GridLinesVisibility="None" RowHeaderWidth="0" AutoGenerateColumns="False" CanUserDeleteRows="False" CanUserAddRows="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn  Header="检测次数" Width="125" Binding="{Binding Path=CHECK_DATE}"/>
+                                <DataGridTextColumn  Header="检测日期" Width="125" Binding="{Binding Path=CHECK_DATE}"/>
+                                <DataGridTextColumn  Header="采样方式" Width="125" Binding="{Binding Path=SAMPLE_TYPE}"/>
+                                <DataGridTextColumn  Header="检测模式" Width="125" Binding="{Binding Path=CHECK_MODE}"/>
+                                <DataGridTextColumn  Header="检测人员" Width="125" Binding="{Binding Path=CHECK_PERSON}"/>
+                                <!--<DataGridTextColumn  Header="检测结果" Width="125" Binding="{Binding Path=QUALITY_RESULT}"/>-->
+                                <DataGridTemplateColumn Header="检测结果" Width="125">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding QUALITY_RESULT,Converter={StaticResource dateConverter},Mode=OneWay}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                    <Label Height="20"/>
+                    <StackPanel Orientation="Vertical" Height="315">
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="label" Content="采样方式：" Margin="0,5,0,5" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <RadioButton x:Name="sp01" Uid="S01" GroupName="sampleType" Margin="20,10,0,5" Content="随机" IsChecked="True" />
+                            <RadioButton x:Name="sp02" Uid="S02" GroupName="sampleType" Margin="20,10,0,5" Content="梅花法"/>
+                            <RadioButton x:Name="sp03" Uid="S03" GroupName="sampleType" Margin="20,10,0,5" Content="蛇形法" />
+                            <RadioButton x:Name="sp04" Uid="S04" GroupName="sampleType" Margin="20,10,0,5" Content="棋盘法"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="label1" Content="检测模式：" Margin="0,5,0,5" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <RadioButton x:Name="rbZ" Uid="Q01" GroupName="checkMode" Margin="20,10,0,5" Content="自动检测" />
+                            <RadioButton x:Name="rbS" Uid="Q02" GroupName="checkMode" Margin="20,10,0,5" Content="手动检测" IsChecked="True"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="label3" Content="检测项目：" Margin="0,5,0,5" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Label x:Name="checkItemValue" Tag="1" Content="有机磷、氨基甲酸酯类农药" Margin="20,5,0,5" Style="{StaticResource ResourceKey=WpfLable}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="label5" Content="检测数据：" Margin="0,5,0,5" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <TextBox x:Name="checkItemVal" TextWrapping="Wrap" Margin="20,5,0,5" Text="" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="label7" Content="结果判定：" Margin="0,5,0,5" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <!--<Label x:Name="qualityResult" Tag="Y" Content="合格"/>-->
+                            <ComboBox Name="qualityResult" Height="26" Margin="20,5,0,5">
+                                <ComboBoxItem Name="qrY" Tag="1" IsSelected="True">合格</ComboBoxItem>
+                                <ComboBoxItem Name="qrN" Tag="2">不合格</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="label19" Content="图片上传：" Margin="0,5,0,5" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <Button x:Name="button" Content="上传" Style="{StaticResource ResourceKey=WpfButton}" Width="75" Height="26" Margin="20,5,0,5"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="label9" Content="检测人员：" Margin="0,5,0,5" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <TextBox x:Name="checkPerson" TextWrapping="Wrap" Margin="20,5,0,5"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="label11" Content="检测日期：" Margin="0,5,0,5" Style="{StaticResource ResourceKey=WpfLable}"/>
+                            <DatePicker Name="checkDate" SelectedDate="{x:Static sys:DateTime.Now}" Padding="0,4,0,0" Width="260" Height="26" Margin="20,5,0,5"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <!--采收-->
+            <TabItem Name="tabItem2">
+                <TabItem.Style>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TabItem}">
+                                    <StackPanel Orientation="Vertical">
+                                        <Image Name="img2Off" Width="84" Height="70" Source="/Trace;component/Res_/Images/icon-采收.png"   Margin="0,0,0,0" ></Image>
+                                        <Label Content="采收" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="img2Off" Property="Source" Value="/Trace;component/Res_/Images/icon-采收2.png"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Style>
+                <StackPanel Orientation="Vertical" Width="750" Margin="0,0,0,-2">
+                    <Label Height="20"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="label20" Content="采收日期：" Margin="20,5,0,5"/>
+                        <DatePicker Name="harvestDate" SelectedDate="{x:Static sys:DateTime.Now}" Width="260" Height="26" Margin="20,5,0,5"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="label21" Content="采收数量：" Margin="20,5,0,5"/>
+                        <TextBox x:Name="harvestAmout" Height="23" TextWrapping="Wrap" Width="260" Margin="20,5,0,5"/>
+                        <!--千克、吨-->
+                        <ComboBox x:Name="harvestAmountUnit" Width="60" Height="28" Margin="10,5,0,5" Padding="6">
+                            <ComboBoxItem Name="hUnitX" Tag="U01" IsSelected="True">千克</ComboBoxItem>
+                            <ComboBoxItem Name="hUnitY" Tag="U02">吨</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Visibility="Collapsed">
+                        <Button x:Name="harvestCancle" Content="取消" Width="75" Click="harvestCancle_Click"/>
+                        <Button x:Name="harvestAdd" Content="新增" Width="75" Click="harvestAdd_Click"/>
+                        <Label Width="100"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <!--销售去向-->
+            <TabItem Name="tabItem3">
+                <TabItem.Style>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TabItem}">
+                                    <StackPanel Orientation="Vertical">
+                                        <Image Name="img2Off" Width="84" Height="70" Source="/Trace;component/Res_/Images/icon-销售去向.png"   Margin="0,0,0,0" ></Image>
+                                        <Label Content="销售去向" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="img2Off" Property="Source" Value="/Trace;component/Res_/Images/icon-销售去向2.png"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Style>
+                <StackPanel Orientation="Vertical" Width="750">
+                    <Label Height="20"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="label30" Content="销售日期：" Margin="20,5,0,5"/>
+                        <DatePicker Name="salesDate" SelectedDate="{x:Static sys:DateTime.Now}" Width="260" Height="28" Margin="30,5,0,5" Padding="0,4,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="label31" Content="销售方式：" Margin="20,5,0,5"/>
+                        <RadioButton x:Name="rbSaleA" Uid="S01" GroupName="salesType" Content="自销" IsChecked="True" Margin="30,10,0,5"/>
+                        <RadioButton x:Name="rbSaleB" Uid="S02" GroupName="salesType" Content="第三方运销" Margin="30,10,0,5"/>
+                        <RadioButton x:Name="rbSaleC" Uid="S03" GroupName="salesType" Content="游客采摘" Margin="30,10,0,5"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="label2" Content="购买单位名称：" Margin="20,5,0,5"/>
+                        <TextBox x:Name="buyUnit" Height="23" TextWrapping="Wrap" Width="260" Margin="6,5,0,5"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="label33" Content="联系方式：" Margin="20,5,0,5"/>
+                        <TextBox x:Name="contactWay" Height="23" TextWrapping="Wrap" Width="260" Margin="30,5,0,5"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="labe2" Content="交易地点：" Margin="20,5,0,5"/>
+                        <TextBox x:Name="loco" Height="23" TextWrapping="Wrap" Width="260" Margin="30,5,0,5"/>
+                    </StackPanel>
+                    <StackPanel Visibility="Collapsed" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="salesCancel" Content="取消" Width="75" Click="salesCancel_Click"/>
+                        <Button x:Name="salesAdd" Content="新增" Width="75" Click="salesAdd_Click"/>
+                        <Label Width="100"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <Border Height="36" Canvas.Top="562" Width="1014" HorizontalAlignment="Right" BorderBrush="#FFdddddd" BorderThickness="0,1,0,0" Background="#FFF7F7F7">
+            <Canvas Margin="930,3,0,0">
+                <Button Visibility="Collapsed" x:Name="qualityCancle" Style="{StaticResource ResourceKey=WpfButton2}" Content="取消" Width="75" Click="qualityCancle_Click" />
+                <Button x:Name="qualityAdd" Style="{StaticResource ResourceKey=WpfButton}" Content="新增" Width="75" Click="qualityAdd_Click" />
+            </Canvas>
+        </Border>
+        <TextBox Name="hproId" Visibility="Hidden"/>
+    </Canvas>
+</Window>
